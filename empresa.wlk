@@ -24,7 +24,11 @@ object mensajeria {
   }
 
   method primerEmpleado() = mensajeros.first()
+  
   method ultimoMensajero() = mensajeros.last()
-  method pesoTotalDeLosMensajeros() {}
+
   method pesoUltimoMensajero() = self.ultimoMensajero().pesoTotal()
+  
+  method pesoTotalDeLosMensajeros() = mensajeros.sum {m => m.pesoTotal()}
+  
 }
