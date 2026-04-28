@@ -1,0 +1,36 @@
+import mensajeros.*
+import paquete.*
+import destinos.*
+import vehiculos.*
+
+describe "Test etapa 1" {
+  test "Que roberto(90kg) pueda llevar a brooklyn un paquete que esta pago en un camion que tiene un acoplado" {
+    paquete.registrarPago()
+    roberto.vehiculo(camion)
+    camion.cantidadAcoplados(1)
+    roberto.cambiarPeso(90)
+    paquete.destino(brooklyn)
+    assert.that(paquete.puedeEntregarse(roberto))
+  }
+
+  test "Que roberto(90kg) no pueda llevar a matrix un paquete que esta pago en un camion que tiene un acoplado" {
+    paquete.registrarPago()
+    roberto.vehiculo(camion)
+    camion.cantidadAcoplados(1)
+    roberto.cambiarPeso(90)
+    paquete.destino(matrix)
+    assert.notThat(paquete.puedeEntregarse(roberto))
+  }
+
+  test "Neo con credito no puede llevar un paquete que no ewsta pago a la matrix" {
+    paquete.destino(matrix)
+    neo.cargarCredito()
+    paquete.rechazarPago()
+    assert.notThat(paquete.puedeEntregarse(neo))   
+  }
+}
+
+
+
+
+

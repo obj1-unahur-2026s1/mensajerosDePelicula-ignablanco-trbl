@@ -1,3 +1,4 @@
+import destinos.*
 object paquete {
     var property destino = brooklyn
     var estaPago = false
