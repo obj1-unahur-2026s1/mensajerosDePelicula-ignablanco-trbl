@@ -37,5 +37,4 @@ object  paqueton {
     method estaPago() {
         return importeAbonado >= self.precio()
     }
-  
 }

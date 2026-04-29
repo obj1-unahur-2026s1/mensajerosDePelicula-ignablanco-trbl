@@ -30,5 +30,9 @@ object mensajeria {
   method pesoUltimoMensajero() = self.ultimoMensajero().pesoTotal()
   
   method pesoTotalDeLosMensajeros() = mensajeros.sum({m => m.pesoTotal()})
+
+  method alMenosUnMensajeroPuedeEntregar(unPaquete) {
+    return mensajeros.any({m => unPaquete.puedeSerEntregado(m)})
+  }
   
 }
