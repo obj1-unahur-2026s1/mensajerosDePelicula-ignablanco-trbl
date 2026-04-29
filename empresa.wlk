@@ -29,6 +29,6 @@ object mensajeria {
 
   method pesoUltimoMensajero() = self.ultimoMensajero().pesoTotal()
   
-  method pesoTotalDeLosMensajeros() = mensajeros.sum {m => m.pesoTotal()}
+  method pesoTotalDeLosMensajeros() = mensajeros.sum({m => m.pesoTotal()})
   
 }
